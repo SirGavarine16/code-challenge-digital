@@ -3,8 +3,13 @@ import { render } from '@testing-library/react-native';
 import { WelcomeHeader } from '../../../src/components';
 
 describe('<WelcomeHeader />', () => {
+    it('should match snapshot', () => {
+        const screen = render(<WelcomeHeader />);
+        expect(screen).toMatchSnapshot();
+     });
+
     it('should render a welcome message', () => {
-        const { getByTestId } = render(<WelcomeHeader />);
+        const { getByTestId } = render(<WelcomeHeader />); 
         expect(getByTestId('welcome-message')).toBeDefined();
     });
 

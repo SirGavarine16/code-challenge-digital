@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<WelcomeHeader /> should match snapshot 1`] = `
+<View
+  style={
+    {
+      "paddingTop": 20,
+    }
+  }
+>
+  <Text
+    style={
+      [
+        {
+          "fontSize": 20,
+          "fontWeight": "400",
+        },
+        {
+          "fontWeight": "800",
+        },
+      ]
+    }
+    testID="welcome-message"
+  >
+    Bienvenido de vuelta!
+  </Text>
+  <Text
+    style={
+      [
+        {
+          "fontSize": 20,
+          "fontWeight": "400",
+        },
+      ]
+    }
+    testID="user-name"
+  >
+    Ruben Rodríguez
+  </Text>
+</View>
+`;
