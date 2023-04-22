@@ -1,9 +1,10 @@
-import React, { FC } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { FC, useEffect } from 'react';
+import { Animated, StyleSheet, Text, View } from 'react-native';
 import { useTheme } from '@react-navigation/native';
 
 import { formatToScore } from '../utils/formats';
 import SectionLabel from './SectionLabel';
+import { useAnimations } from '../hooks';
 
 interface Props {
     label?: string;
@@ -15,17 +16,27 @@ const PointsDisplay: FC<Props> = ({ label = 'Tus puntos', month = 'Diciembre', p
     const { container, cardContainer, monthLabel, scoreLabel } = styles;
     const { colors } = useTheme();
 
+    const { fadeIn, fadeOut, opacity, movePosition, position } = useAnimations();
+
+    useEffect(() => {
+        fadeIn();
+        movePosition(-100, 500, false);
+        return () => {
+            fadeOut();
+        }
+    }, [])
+
     return (
         <View style={container}>
             <SectionLabel label={label} />
-            <View testID='points-card' style={[cardContainer, { backgroundColor: colors.primary }]}>
+            <Animated.View testID='points-card' style={[cardContainer, { backgroundColor: colors.primary, opacity, transform: [{ translateX: position }] }]}>
                 <Text testID='month-label' style={monthLabel}>
                     {month}
                 </Text>
                 <Text testID='points-label' style={scoreLabel}>
                     {formatToScore(points)}
                 </Text>
-            </View>
+            </Animated.View>
         </View>
     );
 };
@@ -47,7 +58,7 @@ const styles = StyleSheet.create({
         shadowOpacity: 0.44,
         shadowRadius: 10.32,
         elevation: 16,
-        alignItems: 'center'
+        alignItems: 'center',
     },
     monthLabel: {
         color: 'white',

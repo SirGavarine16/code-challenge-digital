@@ -1,7 +1,7 @@
-import React, { FC, useCallback } from 'react';
-import { StyleSheet, View, FlatList, ListRenderItemInfo } from 'react-native';
+import React, { FC, useCallback, useEffect } from 'react';
+import { StyleSheet, View, FlatList, ListRenderItemInfo, Animated } from 'react-native';
 
-import { useFlatListOptimizations, useMovementsListControl } from '../hooks';
+import { useAnimations, useFlatListOptimizations, useMovementsListControl } from '../hooks';
 import { Movement } from '../interfaces';
 import MovementListItemSeparator from './MovementListItemSeparator';
 import MovementCard from './MovementCard';
@@ -18,11 +18,20 @@ const MovementsList: FC<Props> = ({ bottom = 0 }) => {
 
     const { keyExtractor, getItemLayout } = useFlatListOptimizations<Movement>('id', 55);
     const { data, filter, resetFilter, showNegativeMovements, showPositiveMovements, isLoading, onRefresh } = useMovementsListControl();
+    const { opacity, fadeIn, fadeOut, movePosition, position } = useAnimations();
+
+    useEffect(() => {
+        fadeIn();
+        movePosition(100, 300);
+        return () => {
+            fadeOut();
+        }
+    }, []);
 
     // Using inline arrow function to render FlatList item re-creates the function on every re-render.
     const renderItem = useCallback(({ item }: ListRenderItemInfo<Movement>) => {
         return <MovementCard item={item} />
-    }, [])
+    }, []);
 
     return (
         <View style={[container, { paddingBottom: bottom === 0 ? 20 : 0 }]}>
@@ -41,7 +50,7 @@ const MovementsList: FC<Props> = ({ bottom = 0 }) => {
                     showsVerticalScrollIndicator={false}
                 />
             </View>
-            <View style={filtersContainer}>
+            <Animated.View style={[filtersContainer, { opacity, transform: [{ translateY: position }]}]}>
                 {
                     filter !== ''
                         ? <Button title='Todos' onPress={resetFilter} />
@@ -50,7 +59,7 @@ const MovementsList: FC<Props> = ({ bottom = 0 }) => {
                             <Button title='Canjeados' width='48.5%' onPress={showNegativeMovements} />
                         </>
                 }
-            </View>
+            </Animated.View>
         </View>
     );
 };

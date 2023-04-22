@@ -31,90 +31,99 @@ exports[`<MovementCard /> should render correctly 1`] = `
   onStartShouldSetResponder={[Function]}
   style={
     {
-      "alignItems": "center",
-      "flexDirection": "row",
       "opacity": 1,
-      "overflow": "hidden",
     }
   }
   testID="card"
 >
-  <Image
-    resizeMode="contain"
-    source={
-      {
-        "uri": "https://loremflickr.com/640/480/technics",
-      }
-    }
-    style={
-      {
-        "borderRadius": 5,
-        "height": 55,
-        "resizeMode": "contain",
-        "width": 55,
-      }
-    }
-    testID="image"
-  />
   <View
-    style={
-      {
-        "justifyContent": "center",
-        "marginLeft": 10,
-        "maxWidth": "50%",
-      }
-    }
-  >
-    <Text
-      style={
-        {
-          "fontWeight": "800",
-        }
-      }
-      testID="name"
-    >
-      Fantastic Granite Bacon
-    </Text>
-    <Text
-      style={
-        [
-          {
-            "fontSize": 12,
-            "fontWeight": "400",
-          },
-          {
-            "marginTop": 2,
-          },
-        ]
-      }
-      testID="date"
-    >
-      9 de diciembre, 2022
-    </Text>
-  </View>
-  <View
+    collapsable={false}
     style={
       {
         "alignItems": "center",
-        "flex": 1,
         "flexDirection": "row",
-        "justifyContent": "flex-end",
+        "opacity": 0,
+        "overflow": "hidden",
       }
     }
   >
-    <Text />
-    <Text
-      style={
+    <Image
+      resizeMode="contain"
+      source={
         {
-          "fontSize": 16,
-          "fontWeight": "800",
+          "uri": "https://loremflickr.com/640/480/technics",
         }
       }
-      testID="points"
+      style={
+        {
+          "borderRadius": 5,
+          "height": 55,
+          "resizeMode": "contain",
+          "width": 55,
+        }
+      }
+      testID="image"
+    />
+    <View
+      style={
+        {
+          "justifyContent": "center",
+          "marginLeft": 10,
+          "maxWidth": "50%",
+        }
+      }
     >
-      42416
-    </Text>
+      <Text
+        style={
+          {
+            "fontWeight": "800",
+          }
+        }
+        testID="name"
+      >
+        Fantastic Granite Bacon
+      </Text>
+      <Text
+        style={
+          [
+            {
+              "fontSize": 12,
+              "fontWeight": "400",
+            },
+            {
+              "marginTop": 2,
+            },
+          ]
+        }
+        testID="date"
+      >
+        9 de diciembre, 2022
+      </Text>
+    </View>
+    <View
+      style={
+        {
+          "alignItems": "center",
+          "flex": 1,
+          "flexDirection": "row",
+          "justifyContent": "flex-end",
+        }
+      }
+    >
+      <Text />
+      <Text
+        style={
+          {
+            "fontSize": 16,
+            "fontWeight": "800",
+          }
+        }
+        testID="points"
+      >
+        42416
+      </Text>
+    </View>
+    <Text />
   </View>
-  <Text />
 </View>
 `;

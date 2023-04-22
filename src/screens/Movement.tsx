@@ -1,5 +1,5 @@
-import React, { FC } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { FC, useEffect } from 'react';
+import { Animated, StyleSheet, Text, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { StackScreenProps } from '@react-navigation/stack';
 
@@ -7,16 +7,25 @@ import { Button, MovementHeader, MovementProductImage } from '../components';
 import { AppStackParams } from '../navigation/AppStack';
 import { colors, spacing } from '../themes/AppTheme';
 import { formatDate } from '../utils/formats';
+import { useAnimations } from '../hooks';
 
 interface Props extends StackScreenProps<AppStackParams, 'MovementScreen'> {
 }
 
 const Movement: FC<Props> = ({ route, navigation }) => {
     const { product, image, createdAt, is_redemption, points } = route.params;
+    const { container, contentContainer, dataContainer, descriptionLabel, dateLabel, pointsLabel } = styles;
 
     const { top, bottom } = useSafeAreaInsets();
-    
-    const { container, contentContainer, dataContainer, descriptionLabel, dateLabel, pointsLabel } = styles;
+    const { fadeIn, fadeOut, movePosition, opacity, position } = useAnimations();
+
+    useEffect(() => {
+        fadeIn();
+        movePosition(100, 600);
+        return () => {
+            fadeOut();
+        }
+    }, []);
 
     return (
         <View style={[container, { paddingBottom: bottom === 0 ? 20 : bottom }]}>
@@ -37,7 +46,9 @@ const Movement: FC<Props> = ({ route, navigation }) => {
                         {points} puntos
                     </Text>
                 </View>
-                <Button title='Aceptar' onPress={() => navigation.navigate('HomeScreen')} />
+                <Animated.View style={{ opacity, transform: [{ translateX: position }] }}>
+                    <Button title='Aceptar' onPress={() => navigation.navigate('HomeScreen')} />
+                </Animated.View>
             </View>
         </View>
     );

@@ -75,27 +75,30 @@ exports[`<Home /> should render correctly 1`] = `
       Tus puntos
     </Text>
     <View
+      collapsable={false}
       style={
-        [
-          {
-            "alignItems": "center",
-            "borderRadius": 20,
-            "elevation": 16,
-            "height": 150,
-            "marginHorizontal": 20,
-            "padding": 15,
-            "shadowColor": "#000",
-            "shadowOffset": {
-              "height": 8,
-              "width": 0,
+        {
+          "alignItems": "center",
+          "backgroundColor": "rgb(0, 122, 255)",
+          "borderRadius": 20,
+          "elevation": 16,
+          "height": 150,
+          "marginHorizontal": 20,
+          "opacity": 0,
+          "padding": 15,
+          "shadowColor": "#000",
+          "shadowOffset": {
+            "height": 8,
+            "width": 0,
+          },
+          "shadowOpacity": 0.44,
+          "shadowRadius": 10.32,
+          "transform": [
+            {
+              "translateX": -100,
             },
-            "shadowOpacity": 0.44,
-            "shadowRadius": 10.32,
-          },
-          {
-            "backgroundColor": "rgb(0, 122, 255)",
-          },
-        ]
+          ],
+        }
       }
       testID="points-card"
     >
@@ -217,11 +220,18 @@ exports[`<Home /> should render correctly 1`] = `
       </RCTScrollView>
     </View>
     <View
+      collapsable={false}
       style={
         {
           "flexDirection": "row",
           "justifyContent": "space-between",
           "marginTop": 30,
+          "opacity": 0,
+          "transform": [
+            {
+              "translateY": 100,
+            },
+          ],
         }
       }
     >

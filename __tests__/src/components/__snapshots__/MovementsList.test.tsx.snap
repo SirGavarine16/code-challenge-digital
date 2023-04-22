@@ -87,11 +87,18 @@ exports[`<MovementsList /> should render correctly 1`] = `
     </RCTScrollView>
   </View>
   <View
+    collapsable={false}
     style={
       {
         "flexDirection": "row",
         "justifyContent": "space-between",
         "marginTop": 30,
+        "opacity": 0,
+        "transform": [
+          {
+            "translateY": 100,
+          },
+        ],
       }
     }
   >

@@ -1,7 +1,8 @@
-import React, { FC } from 'react';
-import { Image, StyleSheet, View } from 'react-native';
+import React, { FC, useEffect } from 'react';
+import { Animated, Image, StyleSheet, View } from 'react-native';
 
 import { colors } from '../themes/AppTheme';
+import { useAnimations } from '../hooks';
 
 interface Props {
     image: string;
@@ -10,10 +11,20 @@ interface Props {
 const MovementProductImage: FC<Props> = ({ image }) => {
     const { container, content } = styles;
 
+    const { fadeIn, fadeOut, movePosition, opacity, position } = useAnimations();
+
+    useEffect(() => {
+        fadeIn();
+        movePosition(-100, 500);
+        return () => {
+            fadeOut();
+        }
+    }, []);
+
     return (
-        <View testID='card-image' style={container}>
+        <Animated.View testID='card-image' style={[container, { opacity, transform: [{ translateX: position }] }]}>
             <Image testID='product-image' source={{ uri: image }}  style={content} resizeMode='contain' />
-        </View>
+        </Animated.View>
     );
 };
 
