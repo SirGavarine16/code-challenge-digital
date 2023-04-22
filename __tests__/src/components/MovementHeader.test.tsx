@@ -1,7 +1,7 @@
 import { render } from '@testing-library/react-native';
 
 import { MovementHeader } from '../../../src/components';
-import { SafeAreaWrapper, dummyData } from '../../../src/utils/tests';
+import { dummyData } from '../../../src/utils/tests';
 
 describe('<MovementHeader />', () => {
     const renderComponent = () => render(<MovementHeader product={dummyData.product} />);

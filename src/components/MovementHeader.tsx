@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { FlexStyle, StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 
 import { colors, spacing } from '../themes/AppTheme';
 

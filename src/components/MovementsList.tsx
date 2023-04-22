@@ -1,12 +1,12 @@
 import React, { FC, useCallback } from 'react';
 import { StyleSheet, View, FlatList, ListRenderItemInfo } from 'react-native';
 
-import Button from './Button';
-import MovementCard from './MovementCard';
-import SectionLabel from './SectionLabel';
-import MovementListItemSeparator from './MovementListItemSeparator';
 import { useFlatListOptimizations, useMovementsListControl } from '../hooks';
 import { Movement } from '../interfaces';
+import MovementListItemSeparator from './MovementListItemSeparator';
+import MovementCard from './MovementCard';
+import SectionLabel from './SectionLabel';
+import Button from './Button';
 
 interface Props {
     bottom?: number;

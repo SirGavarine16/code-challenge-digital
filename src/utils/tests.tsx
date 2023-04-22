@@ -21,6 +21,5 @@ export const ReduxWrapper = ({ children }: PropsWithChildren<{}>) => {
 }
 
 export const NavigationWrapper = ({ children }: PropsWithChildren<{}>) => {
-    const store = configureStore({ reducer: rootReducer });
     return <NavigationContainer>{children}</NavigationContainer>
 }

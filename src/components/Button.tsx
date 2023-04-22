@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { FlexStyle, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { FlexStyle, StyleSheet, Text, TouchableOpacity } from 'react-native';
 import { useTheme } from '@react-navigation/native';
 
 interface Props {
