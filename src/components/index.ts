@@ -7,3 +7,4 @@ export { default as MovementListItemSeparator } from './MovementListItemSeparato
 export { default as Button } from './Button';
 export { default as MovementHeader } from './MovementHeader';
 export { default as MovementProductImage } from './MovementProductImage';
+export { default as EmptyMovementsList } from './EmptyMovementsList';

@@ -23,6 +23,8 @@ describe('useMovementsListControl', () => {
             showPositiveMovements: expect.any(Function),
             showNegativeMovements: expect.any(Function),
             resetFilter: expect.any(Function),
+            isLoading: expect.any(Boolean),
+            onRefresh: expect.any(Function),
         });
     });
 

@@ -40,6 +40,7 @@ exports[`<MovementsList /> should render correctly 1`] = `
   >
     <RCTScrollView
       ItemSeparatorComponent={[Function]}
+      ListEmptyComponent={[Function]}
       data={[]}
       getItem={[Function]}
       getItemCount={[Function]}
@@ -50,9 +51,17 @@ exports[`<MovementsList /> should render correctly 1`] = `
       onLayout={[Function]}
       onMomentumScrollBegin={[Function]}
       onMomentumScrollEnd={[Function]}
+      onRefresh={[Function]}
       onScroll={[Function]}
       onScrollBeginDrag={[Function]}
       onScrollEndDrag={[Function]}
+      refreshControl={
+        <RefreshControlMock
+          onRefresh={[Function]}
+          refreshing={false}
+        />
+      }
+      refreshing={false}
       removeClippedSubviews={false}
       renderItem={[Function]}
       scrollEventThrottle={50}
@@ -60,7 +69,21 @@ exports[`<MovementsList /> should render correctly 1`] = `
       stickyHeaderIndices={[]}
       viewabilityConfigCallbackPairs={[]}
     >
-      <View />
+      <RCTRefreshControl />
+      <View>
+        <Text
+          style={
+            {
+              "fontSize": 16,
+              "fontWeight": "400",
+              "textAlign": "center",
+            }
+          }
+          testID="empty-message"
+        >
+          No hay movimientos disponibles.
+        </Text>
+      </View>
     </RCTScrollView>
   </View>
   <View

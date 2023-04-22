@@ -9,8 +9,13 @@ type MovementsFilter = '' | 'positive' | 'negative';
 const useMovementsListControl = (isTesting = false) => {
     const dispatch = useAppDispatch();
     const { movements } = useAppSelector(state => state.movements);
+    const { isLoading } = useAppSelector(state => state.ui);
 
     const [filter, setFilter] = useState<MovementsFilter>('');
+
+    const onRefresh = () => {
+        dispatch(fetchMovements());
+    }
 
     useEffect(() => {
         if (isTesting) dispatch(fetchMovements());
@@ -49,8 +54,8 @@ const useMovementsListControl = (isTesting = false) => {
     }
 
     return isTesting
-        ? { movements, filter, data, resetFilter, showPositiveMovements, showNegativeMovements }
-        : { filter, data, resetFilter, showPositiveMovements, showNegativeMovements  };
+        ? { movements, filter, data, resetFilter, showPositiveMovements, showNegativeMovements, isLoading, onRefresh }
+        : { filter, data, resetFilter, showPositiveMovements, showNegativeMovements, isLoading, onRefresh  };
 }
 
 export default useMovementsListControl;

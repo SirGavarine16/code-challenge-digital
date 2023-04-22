@@ -7,6 +7,7 @@ import MovementListItemSeparator from './MovementListItemSeparator';
 import MovementCard from './MovementCard';
 import SectionLabel from './SectionLabel';
 import Button from './Button';
+import EmptyMovementsList from './EmptyMovementsList';
 
 interface Props {
     bottom?: number;
@@ -16,7 +17,7 @@ const MovementsList: FC<Props> = ({ bottom = 0 }) => {
     const { container, listContainer, filtersContainer } = styles;
 
     const { keyExtractor, getItemLayout } = useFlatListOptimizations<Movement>('id', 55);
-    const { data, filter, resetFilter, showNegativeMovements, showPositiveMovements } = useMovementsListControl();
+    const { data, filter, resetFilter, showNegativeMovements, showPositiveMovements, isLoading, onRefresh } = useMovementsListControl();
 
     // Using inline arrow function to render FlatList item re-creates the function on every re-render.
     const renderItem = useCallback(({ item }: ListRenderItemInfo<Movement>) => {
@@ -31,6 +32,9 @@ const MovementsList: FC<Props> = ({ bottom = 0 }) => {
                     data={data}
                     renderItem={renderItem}
                     ItemSeparatorComponent={MovementListItemSeparator}
+                    ListEmptyComponent={EmptyMovementsList}
+                    onRefresh={onRefresh}
+                    refreshing={isLoading}
                     keyExtractor={keyExtractor}
                     getItemLayout={getItemLayout}
                     maxToRenderPerBatch={8}
