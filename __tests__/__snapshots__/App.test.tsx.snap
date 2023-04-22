@@ -313,7 +313,7 @@ exports[`<App /> renders correctly 1`] = `
                               }
                               testID="points-label"
                             >
-                              1,000.00 pts
+                              0.00 pts
                             </Text>
                           </View>
                         </View>

@@ -6,7 +6,7 @@ import MovementCard from './MovementCard';
 import SectionLabel from './SectionLabel';
 import MovementListItemSeparator from './MovementListItemSeparator';
 import { useFlatListOptimizations, useMovementsListControl } from '../hooks';
-import { Product } from '../interfaces';
+import { Movement } from '../interfaces';
 
 interface Props {
 }
@@ -14,11 +14,11 @@ interface Props {
 const MovementsList: FC<Props> = () => {
     const { container, listContainer, filtersContainer } = styles;
 
-    const { keyExtractor, getItemLayout } = useFlatListOptimizations<Product>('id', 55);
+    const { keyExtractor, getItemLayout } = useFlatListOptimizations<Movement>('id', 55);
     const { data, filter, resetFilter, showNegativeMovements, showPositiveMovements } = useMovementsListControl();
 
     // Using inline arrow function to render FlatList item re-creates the function on every re-render.
-    const renderItem = useCallback(({ item }: ListRenderItemInfo<Product>) => {
+    const renderItem = useCallback(({ item }: ListRenderItemInfo<Movement>) => {
         return <MovementCard item={item} />
     }, [])
 

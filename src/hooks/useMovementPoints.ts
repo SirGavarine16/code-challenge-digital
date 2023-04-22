@@ -2,33 +2,31 @@ import { useEffect, useMemo } from 'react';
 
 import useAppSelector from './useAppSelector'
 import useAppDispatch from './useAppDispatch';
-import { fetchProducts } from '../redux/slices/productsSlice';
+import { fetchMovements } from '../redux/slices/movementsSlice';
 
-const useProductPoints = (isTesting: boolean = false) => {
+const useMovementPoints = (isTesting: boolean = false) => {
     const dispatch = useAppDispatch();
-    const { products } = useAppSelector(state => state.products);
+    const { movements } = useAppSelector(state => state.movements);
 
-    // Only to populate products in unit testing.
+    // Only to populate movements in unit testing.
     useEffect(() => {
-        if (isTesting) dispatch(fetchProducts());
+        if (isTesting) dispatch(fetchMovements());
     }, []);
 
     const totalPoints = useMemo(() => {
-        if (products.length === 0) return undefined;
-
         let totalPoints = 0;
-        products.forEach(({ is_redemption, points }) => {
+        movements.forEach(({ is_redemption, points }) => {
             is_redemption
                 ? totalPoints += points
                 : totalPoints -= points;
         });
         return totalPoints;
-    }, [products]);
+    }, [movements]);
 
     // Only returns products in unit testing.
     return isTesting
-        ? { totalPoints, products }
+        ? { totalPoints, movements }
         : { totalPoints };
 }
 
-export default useProductPoints;
+export default useMovementPoints;

@@ -2,21 +2,21 @@ import { useEffect } from 'react';
 
 import useAppSelector from './useAppSelector'
 import useAppDispatch from './useAppDispatch';
-import { fetchProducts } from '../redux/slices/productsSlice';
+import { fetchMovements } from '../redux/slices/movementsSlice';
 
-const useProductsFetch = () => {
+const useMovementsFetch = () => {
     const dispatch = useAppDispatch();
     const { isLoading } = useAppSelector(state => state.ui);
-    const { products } = useAppSelector(state => state.products);
+    const { movements } = useAppSelector(state => state.movements);
 
     useEffect(() => {
-        dispatch(fetchProducts());
+        dispatch(fetchMovements());
     }, []);
 
     return {
         isLoading,
-        products,
+        movements,
     }
 }
 
-export default useProductsFetch;
+export default useMovementsFetch;

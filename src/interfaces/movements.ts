@@ -1,4 +1,4 @@
-export interface Product {
+export interface Movement {
     id: string;
     product: string;
     points: number;

@@ -1,11 +1,11 @@
 import { StackNavigationOptions, createStackNavigator } from '@react-navigation/stack';
 
-import { Home, Product } from '../screens';
-import { Product as ProductData } from '../interfaces';
+import { Home, Movement } from '../screens';
+import { Movement as MovementData } from '../interfaces';
 
 export type AppStackParams = {
     HomeScreen: undefined;
-    ProductScreen: ProductData;
+    MovementScreen: MovementData;
 };
 
 const Stack = createStackNavigator<AppStackParams>();
@@ -18,7 +18,7 @@ export const AppStack = () => {
     return (
         <Stack.Navigator screenOptions={screenOptions}>
             <Stack.Screen name='HomeScreen' component={Home} />
-            <Stack.Screen name='ProductScreen' component={Product} />
+            <Stack.Screen name='MovementScreen' component={Movement} />
         </Stack.Navigator>
     )
 };

@@ -4,12 +4,12 @@ import { Text, View } from 'react-native';
 interface Props {
 }
 
-const Product: FC<Props> = () => {
+const Movement: FC<Props> = () => {
     return (
         <View>
-            <Text>Product Screen</Text>
+            <Text>Movement Screen</Text>
         </View>
     );
 };
 
-export default Product;
+export default Movement;

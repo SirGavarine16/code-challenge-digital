@@ -4,12 +4,12 @@ import { useNavigation } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
-import { Product } from '../interfaces';
+import { Movement } from '../interfaces';
 import { formatDate } from '../utils/formats';
 import { AppStackParams } from '../navigation/AppStack';
 
 interface Props {
-    item: Product;
+    item: Movement;
 }
 
 const MovementCard: FC<Props> = ({ item }) => {
@@ -18,7 +18,7 @@ const MovementCard: FC<Props> = ({ item }) => {
     const { navigate } = useNavigation<StackNavigationProp<AppStackParams>>();
 
     return (
-        <TouchableOpacity testID='card' style={container} onPress={() => navigate('ProductScreen', item)}>
+        <TouchableOpacity testID='card' style={container} onPress={() => navigate('MovementScreen', item)}>
             <Image testID='image' source={{ uri: item.image }} style={image} resizeMode='contain' />
             <View style={dataContainer}>
                 <Text testID='name' style={boldText}>

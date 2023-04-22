@@ -4,6 +4,7 @@ describe('AppTheme', () => {
     it('colors should be an object with primary and background colors as strings', () => {
         expect(colors).toEqual({
             primary: expect.any(String),
+            secondary: expect.any(String),
             background: expect.any(String),
         });
     });

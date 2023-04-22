@@ -1,10 +1,10 @@
 import { render } from '@testing-library/react-native';
 
-import { Product } from '../../../src/screens';
+import { Movement } from '../../../src/screens';
 
-describe('<Product />', () => {
+describe('<Movement />', () => {
     it('should render correctly', () => {
-        const screen = render(<Product />);
+        const screen = render(<Movement />);
         expect(screen).toMatchSnapshot();
     });
 });

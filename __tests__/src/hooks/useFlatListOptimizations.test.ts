@@ -1,7 +1,6 @@
 import { renderHook } from '@testing-library/react-native';
 
 import { useFlatListOptimizations } from '../../../src/hooks';
-import { Product } from '../../../src/interfaces';
 
 describe('useFlatListOptimizations', () => {
     const render = () => renderHook(() => useFlatListOptimizations<any>('id', 55));

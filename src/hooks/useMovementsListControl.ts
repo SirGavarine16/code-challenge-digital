@@ -2,35 +2,35 @@ import { useEffect, useMemo, useState } from 'react';
 
 import useAppSelector from './useAppSelector';
 import useAppDispatch from './useAppDispatch';
-import { fetchProducts } from '../redux/slices/productsSlice';
+import { fetchMovements } from '../redux/slices/movementsSlice';
 
 type MovementsFilter = '' | 'positive' | 'negative';
 
 const useMovementsListControl = (isTesting = false) => {
     const dispatch = useAppDispatch();
-    const { products } = useAppSelector(state => state.products);
+    const { movements } = useAppSelector(state => state.movements);
 
     const [filter, setFilter] = useState<MovementsFilter>('');
 
     useEffect(() => {
-        if (isTesting) dispatch(fetchProducts());
+        if (isTesting) dispatch(fetchMovements());
     }, []);
 
-    const getFilteredProducts = () => {
+    const getFilteredMovements = () => {
         switch(filter) {
             case 'positive':
-                return products.filter(product => product.is_redemption === false);
+                return movements.filter(movement => movement.is_redemption === false);
             case 'negative':
-                return products.filter(product => product.is_redemption === true);
+                return movements.filter(movement => movement.is_redemption === true);
             default:
-                return products;
+                return movements;
         };
     }
 
     const data = useMemo(() => {
-        if (filter === '') return products;
-        return getFilteredProducts();
-    }, [products, filter, filter]);
+        if (filter === '') return movements;
+        return getFilteredMovements();
+    }, [movements, filter, filter]);
 
     const resetFilter = () => {
         setFilter('');
@@ -49,7 +49,7 @@ const useMovementsListControl = (isTesting = false) => {
     }
 
     return isTesting
-        ? { products, filter, data, resetFilter, showPositiveMovements, showNegativeMovements }
+        ? { movements, filter, data, resetFilter, showPositiveMovements, showNegativeMovements }
         : { filter, data, resetFilter, showPositiveMovements, showNegativeMovements  };
 }
 

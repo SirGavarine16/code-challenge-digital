@@ -1,11 +1,11 @@
 import { Action, PreloadedState, ThunkAction, combineReducers, configureStore } from '@reduxjs/toolkit';
 
-import { productsReducer, uiReducer } from './slices';
+import { movementsReducer, uiReducer } from './slices';
 
 // Root Reducer is created independently to obtain RootState type
 export const rootReducer = combineReducers({
     ui: uiReducer,
-    products: productsReducer,
+    movements: movementsReducer,
 });
 
 export const setUpStore = (preloadedState?: PreloadedState<RootState>) => {
