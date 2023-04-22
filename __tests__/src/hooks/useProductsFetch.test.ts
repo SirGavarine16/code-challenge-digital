@@ -18,6 +18,7 @@ describe('useProductsFetch', () => {
             () => expect(result.current.products.length).toBeGreaterThan(0)
         );
         const { products } = result.current;
+
         expect(products[0]).toEqual({
             id: expect.any(String),
             product: expect.any(String),

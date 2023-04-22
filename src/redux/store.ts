@@ -15,7 +15,11 @@ export const setUpStore = (preloadedState?: PreloadedState<RootState>) => {
     });
 }
 
+export const store = configureStore({ reducer: rootReducer });
+
 export type RootState = ReturnType<typeof rootReducer>;
 export type AppStore = ReturnType<typeof setUpStore>;
 export type AppDispatch = AppStore['dispatch'];
 export type AppThunk<ReturnType = void> = ThunkAction<ReturnType, RootState, unknown, Action<string>>;
+
+export default store;
