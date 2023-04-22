@@ -1,10 +1,11 @@
 import { StackNavigationOptions, createStackNavigator } from '@react-navigation/stack';
 
 import { Home, Product } from '../screens';
+import { Product as ProductData } from '../interfaces';
 
 export type AppStackParams = {
     HomeScreen: undefined;
-    ProductScreen: undefined;
+    ProductScreen: ProductData;
 };
 
 const Stack = createStackNavigator<AppStackParams>();

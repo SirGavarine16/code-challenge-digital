@@ -11,11 +11,11 @@ interface Props {
 }
 
 const PointsDisplay: FC<Props> = ({ label = 'Tus puntos', month = 'Diciembre', points = 1000 }) => {
-    const { cardContainer, monthLabel, scoreLabel } = styles;
+    const { container, cardContainer, monthLabel, scoreLabel } = styles;
     const { colors } = useTheme();
 
     return (
-        <View>
+        <View style={container}>
             <SectionLabel label={label} />
             <View testID='points-card' style={[cardContainer, { backgroundColor: colors.primary }]}>
                 <Text testID='month-label' style={monthLabel}>
@@ -30,6 +30,9 @@ const PointsDisplay: FC<Props> = ({ label = 'Tus puntos', month = 'Diciembre', p
 };
 
 const styles = StyleSheet.create({
+    container: {
+        marginBottom: 20,
+    },
     cardContainer: {
         marginHorizontal: 20,
         borderRadius: 20,

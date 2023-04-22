@@ -1,4 +1,5 @@
 import { PropsWithChildren } from 'react';
+import { NavigationContainer } from '@react-navigation/native';
 import { configureStore } from '@reduxjs/toolkit';
 import { Provider } from 'react-redux';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
@@ -12,4 +13,9 @@ export const SafeAreaWrapper = ({ children }: PropsWithChildren<{}>) => {
 export const ReduxWrapper = ({ children }: PropsWithChildren<{}>) => {
     const store = configureStore({ reducer: rootReducer });
     return <Provider store={store}>{children}</Provider>
+}
+
+export const NavigationWrapper = ({ children }: PropsWithChildren<{}>) => {
+    const store = configureStore({ reducer: rootReducer });
+    return <NavigationContainer>{children}</NavigationContainer>
 }

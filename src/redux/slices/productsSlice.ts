@@ -37,7 +37,6 @@ export const fetchProducts = (): AppThunk => {
             dispatch(storeProducts(data))
             dispatch(finishLoading());
         } catch (error) {
-            console.log('fetchProducts', error);
             dispatch(finishLoading());
         }
     }
