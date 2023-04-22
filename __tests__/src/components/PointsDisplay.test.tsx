@@ -1,4 +1,5 @@
 import { render } from '@testing-library/react-native';
+
 import { PointsDisplay } from '../../../src/components';
 import { formatToScore } from '../../../src/utils/formats';
 
@@ -10,7 +11,7 @@ describe('<PointsDisplay />', () => {
 
     it('should have a label', () => {
         const { getByTestId } = render(<PointsDisplay />);
-        expect(getByTestId('display-label')).toBeDefined(); 
+        expect(getByTestId('section-label')).toBeDefined(); 
     });
 
     it('should display the month', () => {
@@ -37,9 +38,7 @@ describe('<PointsDisplay />', () => {
 
     it('should display the given ammount of points', () => {
         const points = 3000;
-
         const { getByText } = render(<PointsDisplay points={points}  />);
-
         expect(getByText(formatToScore(3000))).toBeDefined();
     });
 });

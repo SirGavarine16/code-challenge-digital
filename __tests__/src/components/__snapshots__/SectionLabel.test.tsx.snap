@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SectionLabel /> should render correctly 1`] = `
+<Text
+  style={
+    {
+      "color": "#9B9898",
+      "fontSize": 14,
+      "fontWeight": "800",
+      "marginBottom": 20,
+      "textTransform": "uppercase",
+    }
+  }
+  testID="section-label"
+/>
+`;

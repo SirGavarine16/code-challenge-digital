@@ -8,10 +8,11 @@ exports[`<PointsDisplay /> should render correctly 1`] = `
         "color": "#9B9898",
         "fontSize": 14,
         "fontWeight": "800",
+        "marginBottom": 20,
         "textTransform": "uppercase",
       }
     }
-    testID="display-label"
+    testID="section-label"
   >
     Tus puntos
   </Text>
@@ -24,7 +25,6 @@ exports[`<PointsDisplay /> should render correctly 1`] = `
           "elevation": 16,
           "height": 150,
           "marginHorizontal": 20,
-          "marginTop": 20,
           "padding": 15,
           "shadowColor": "#000",
           "shadowOffset": {
