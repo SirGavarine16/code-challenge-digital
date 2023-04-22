@@ -1,15 +1,27 @@
 import React, { FC } from 'react';
-import { Text, View } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { WelcomeHeader } from '../components';
 
 interface Props {
 }
 
 const Home: FC<Props> = () => {
+    const { container } = styles;
+    const { top: paddingTop, bottom: paddingBottom } = useSafeAreaInsets();
+
     return (
-        <View>
-            <Text>Home Screen</Text>
+        <View style={[container, { paddingTop, paddingBottom }]}>
+            <WelcomeHeader />
         </View>
     );
 };
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        paddingHorizontal: 20
+    }
+});
 
 export default Home;
