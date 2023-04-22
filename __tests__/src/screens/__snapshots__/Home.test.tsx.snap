@@ -1,15 +1,314 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Home /> should render correctly 1`] = `
-<RNCSafeAreaProvider
-  onInsetsChange={[Function]}
+<View
   style={
     [
       {
         "flex": 1,
+        "paddingHorizontal": 20,
       },
-      undefined,
+      {
+        "paddingBottom": 0,
+        "paddingTop": 0,
+      },
     ]
   }
-/>
+>
+  <View
+    style={
+      {
+        "marginBottom": 20,
+        "paddingTop": 30,
+      }
+    }
+  >
+    <Text
+      style={
+        [
+          {
+            "fontSize": 20,
+            "fontWeight": "400",
+          },
+          {
+            "fontWeight": "800",
+          },
+        ]
+      }
+      testID="welcome-message"
+    >
+      Bienvenido de vuelta!
+    </Text>
+    <Text
+      style={
+        [
+          {
+            "fontSize": 20,
+            "fontWeight": "400",
+          },
+        ]
+      }
+      testID="user-name"
+    >
+      Ruben Rodríguez
+    </Text>
+  </View>
+  <View
+    style={
+      {
+        "marginBottom": 20,
+      }
+    }
+  >
+    <Text
+      style={
+        {
+          "color": "#9B9898",
+          "fontSize": 14,
+          "fontWeight": "800",
+          "marginBottom": 20,
+          "textTransform": "uppercase",
+        }
+      }
+      testID="section-label"
+    >
+      Tus puntos
+    </Text>
+    <View
+      style={
+        [
+          {
+            "alignItems": "center",
+            "borderRadius": 20,
+            "elevation": 16,
+            "height": 150,
+            "marginHorizontal": 20,
+            "padding": 15,
+            "shadowColor": "#000",
+            "shadowOffset": {
+              "height": 8,
+              "width": 0,
+            },
+            "shadowOpacity": 0.44,
+            "shadowRadius": 10.32,
+          },
+          {
+            "backgroundColor": "rgb(0, 122, 255)",
+          },
+        ]
+      }
+      testID="points-card"
+    >
+      <Text
+        style={
+          {
+            "alignSelf": "flex-start",
+            "color": "white",
+            "fontSize": 16,
+            "fontWeight": "800",
+            "textTransform": "capitalize",
+          }
+        }
+        testID="month-label"
+      >
+        Diciembre
+      </Text>
+      <Text
+        style={
+          {
+            "color": "white",
+            "fontSize": 32,
+            "fontWeight": "800",
+            "position": "absolute",
+            "textAlign": "center",
+            "top": "50%",
+            "width": "100%",
+          }
+        }
+        testID="points-label"
+      >
+        0.00 pts
+      </Text>
+    </View>
+  </View>
+  <View
+    style={
+      [
+        {
+          "flex": 1,
+        },
+        {
+          "paddingBottom": 20,
+        },
+      ]
+    }
+  >
+    <Text
+      style={
+        {
+          "color": "#9B9898",
+          "fontSize": 14,
+          "fontWeight": "800",
+          "marginBottom": 20,
+          "textTransform": "uppercase",
+        }
+      }
+      testID="section-label"
+    >
+      Tus movimientos
+    </Text>
+    <View
+      style={
+        {
+          "backgroundColor": "white",
+          "borderRadius": 8,
+          "flex": 1,
+          "padding": 10,
+        }
+      }
+      testID="list-container"
+    >
+      <RCTScrollView
+        ItemSeparatorComponent={[Function]}
+        data={[]}
+        getItem={[Function]}
+        getItemCount={[Function]}
+        getItemLayout={[Function]}
+        keyExtractor={[Function]}
+        maxToRenderPerBatch={8}
+        onContentSizeChange={[Function]}
+        onLayout={[Function]}
+        onMomentumScrollBegin={[Function]}
+        onMomentumScrollEnd={[Function]}
+        onScroll={[Function]}
+        onScrollBeginDrag={[Function]}
+        onScrollEndDrag={[Function]}
+        removeClippedSubviews={false}
+        renderItem={[Function]}
+        scrollEventThrottle={50}
+        showsVerticalScrollIndicator={false}
+        stickyHeaderIndices={[]}
+        viewabilityConfigCallbackPairs={[]}
+      >
+        <View />
+      </RCTScrollView>
+    </View>
+    <View
+      style={
+        {
+          "flexDirection": "row",
+          "justifyContent": "space-between",
+          "marginTop": 30,
+        }
+      }
+    >
+      <View
+        accessibilityState={
+          {
+            "busy": undefined,
+            "checked": undefined,
+            "disabled": undefined,
+            "expanded": undefined,
+            "selected": undefined,
+          }
+        }
+        accessibilityValue={
+          {
+            "max": undefined,
+            "min": undefined,
+            "now": undefined,
+            "text": undefined,
+          }
+        }
+        accessible={true}
+        collapsable={false}
+        focusable={true}
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          {
+            "backgroundColor": "rgb(0, 122, 255)",
+            "borderRadius": 10,
+            "opacity": 1,
+            "padding": 15,
+            "width": "48.5%",
+          }
+        }
+        testID="button"
+      >
+        <Text
+          style={
+            {
+              "color": "white",
+              "fontSize": 14,
+              "fontWeight": "800",
+              "textAlign": "center",
+            }
+          }
+          testID="button-title"
+        >
+          Ganados
+        </Text>
+      </View>
+      <View
+        accessibilityState={
+          {
+            "busy": undefined,
+            "checked": undefined,
+            "disabled": undefined,
+            "expanded": undefined,
+            "selected": undefined,
+          }
+        }
+        accessibilityValue={
+          {
+            "max": undefined,
+            "min": undefined,
+            "now": undefined,
+            "text": undefined,
+          }
+        }
+        accessible={true}
+        collapsable={false}
+        focusable={true}
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          {
+            "backgroundColor": "rgb(0, 122, 255)",
+            "borderRadius": 10,
+            "opacity": 1,
+            "padding": 15,
+            "width": "48.5%",
+          }
+        }
+        testID="button"
+      >
+        <Text
+          style={
+            {
+              "color": "white",
+              "fontSize": 14,
+              "fontWeight": "800",
+              "textAlign": "center",
+            }
+          }
+          testID="button-title"
+        >
+          Canjeados
+        </Text>
+      </View>
+    </View>
+  </View>
+</View>
 `;

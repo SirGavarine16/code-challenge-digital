@@ -1,6 +1,8 @@
 import React, { FC } from 'react';
 import { StyleSheet, Text } from 'react-native';
 
+import { colors } from '../themes/AppTheme';
+
 interface Props {
     label?: string; 
 }
@@ -17,7 +19,7 @@ const SectionLabel: FC<Props> = ({ label = '' }) => {
 
 const styles = StyleSheet.create({
     text: {
-        color: '#9B9898',
+        color: colors.textSecondary,
         fontSize: 14,
         fontWeight: '800',
         textTransform: 'uppercase',

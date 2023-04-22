@@ -5,3 +5,5 @@ export { default as MovementsList } from './MovementsList';
 export { default as MovementCard } from './MovementCard';
 export { default as MovementListItemSeparator } from './MovementListItemSeparator';
 export { default as Button } from './Button';
+export { default as MovementHeader } from './MovementHeader';
+export { default as MovementProductImage } from './MovementProductImage';

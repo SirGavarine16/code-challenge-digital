@@ -4,6 +4,7 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 import { MovementsList, PointsDisplay, WelcomeHeader } from '../components';
 import { useMovementsFetch, useMovementPoints } from '../hooks';
+import { spacing } from '../themes/AppTheme';
 
 interface Props {
 }
@@ -19,7 +20,7 @@ const Home: FC<Props> = () => {
         <View style={[container, { paddingTop, paddingBottom }]}>
             <WelcomeHeader />
             <PointsDisplay points={totalPoints} />
-            <MovementsList />
+            <MovementsList bottom={paddingBottom} />
         </View>
     );
 };
@@ -27,7 +28,7 @@ const Home: FC<Props> = () => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        paddingHorizontal: 20
+        paddingHorizontal: spacing.paddingHorizontal,
     }
 });
 

@@ -2,7 +2,6 @@ import { PropsWithChildren } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { configureStore } from '@reduxjs/toolkit';
 import { Provider } from 'react-redux';
-import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 import { Movement } from '../interfaces';
 import { rootReducer } from '../redux/store';
@@ -14,10 +13,6 @@ export const dummyData: Movement = {
     image: "https://loremflickr.com/640/480/technics",
     is_redemption: false,
     id: "3"
-}
-
-export const SafeAreaWrapper = ({ children }: PropsWithChildren<{}>) => {
-    return <SafeAreaProvider>{children}</SafeAreaProvider>
 }
 
 export const ReduxWrapper = ({ children }: PropsWithChildren<{}>) => {

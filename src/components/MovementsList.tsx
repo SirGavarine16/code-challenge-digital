@@ -1,5 +1,5 @@
 import React, { FC, useCallback } from 'react';
-import { StyleSheet, View, Platform, FlatList, ListRenderItemInfo } from 'react-native';
+import { StyleSheet, View, FlatList, ListRenderItemInfo } from 'react-native';
 
 import Button from './Button';
 import MovementCard from './MovementCard';
@@ -9,9 +9,10 @@ import { useFlatListOptimizations, useMovementsListControl } from '../hooks';
 import { Movement } from '../interfaces';
 
 interface Props {
+    bottom?: number;
 }
 
-const MovementsList: FC<Props> = () => {
+const MovementsList: FC<Props> = ({ bottom = 0 }) => {
     const { container, listContainer, filtersContainer } = styles;
 
     const { keyExtractor, getItemLayout } = useFlatListOptimizations<Movement>('id', 55);
@@ -23,7 +24,7 @@ const MovementsList: FC<Props> = () => {
     }, [])
 
     return (
-        <View style={[container, { marginBottom: Platform.OS === 'android' ? 20 : 0 }]}>
+        <View style={[container, { paddingBottom: bottom === 0 ? 20 : 0 }]}>
             <SectionLabel label='Tus movimientos' />
             <View testID='list-container' style={listContainer}>
                 <FlatList

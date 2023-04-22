@@ -1,12 +1,19 @@
-import AppTheme, { colors } from '../../../src/themes/AppTheme';
+import AppTheme, { colors, spacing } from '../../../src/themes/AppTheme';
 
 describe('AppTheme', () => {
-    it('colors should be an object with primary and background colors as strings', () => {
+    it('colors should be a valid colors object', () => {
         expect(colors).toEqual({
             primary: expect.any(String),
             secondary: expect.any(String),
             background: expect.any(String),
+            textSecondary: expect.any(String),
         });
+    });
+
+    it('spacing should be a valid spacing object', () => {
+        expect(spacing).toEqual({
+            paddingHorizontal: expect.any(Number),
+        })
     });
 
     it('AppTheme should have all fields as a React Navigation theme', () => {

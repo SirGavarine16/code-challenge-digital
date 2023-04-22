@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<MovementHeader /> should render correctly 1`] = `
+<View
+  style={
+    [
+      {
+        "backgroundColor": "#CFD6FF",
+        "marginBottom": 20,
+        "paddingHorizontal": 20,
+      },
+      {
+        "paddingTop": 80,
+      },
+    ]
+  }
+>
+  <Text
+    style={
+      {
+        "fontSize": 24,
+        "fontWeight": "800",
+        "marginBottom": 10,
+      }
+    }
+    testID="product-name"
+  >
+    Fantastic Granite Bacon
+  </Text>
+</View>
+`;
