@@ -23,7 +23,8 @@ const WelcomeHeader: FC<Props> = ({ message = 'Bienvenido de vuelta!', username 
 
 const styles = StyleSheet.create({
     container: {
-        paddingTop: 20,
+        paddingTop: 30,
+        marginBottom: 20
     },
     text: {
         fontSize: 20,

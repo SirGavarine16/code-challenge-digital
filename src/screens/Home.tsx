@@ -1,8 +1,9 @@
 import React, { FC } from 'react';
 import { StyleSheet, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { WelcomeHeader } from '../components';
-import { useProductsFetch } from '../hooks';
+
+import { PointsDisplay, WelcomeHeader } from '../components';
+import { useProductPoints, useProductsFetch } from '../hooks';
 
 interface Props {
 }
@@ -10,10 +11,14 @@ interface Props {
 const Home: FC<Props> = () => {
     const { container } = styles;
     const { top: paddingTop, bottom: paddingBottom } = useSafeAreaInsets();
-    
+
+    const { products } = useProductsFetch();
+    const { totalPoints } = useProductPoints();
+
     return (
         <View style={[container, { paddingTop, paddingBottom }]}>
             <WelcomeHeader />
+            <PointsDisplay points={totalPoints} />
         </View>
     );
 };

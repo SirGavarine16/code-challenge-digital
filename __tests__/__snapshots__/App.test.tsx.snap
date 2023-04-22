@@ -204,7 +204,8 @@ exports[`<App /> renders correctly 1`] = `
                         <View
                           style={
                             {
-                              "paddingTop": 20,
+                              "marginBottom": 20,
+                              "paddingTop": 30,
                             }
                           }
                         >
@@ -237,6 +238,78 @@ exports[`<App /> renders correctly 1`] = `
                           >
                             Ruben Rodríguez
                           </Text>
+                        </View>
+                        <View>
+                          <Text
+                            style={
+                              {
+                                "color": "#9B9898",
+                                "fontSize": 14,
+                                "fontWeight": "800",
+                                "textTransform": "uppercase",
+                              }
+                            }
+                            testID="display-label"
+                          >
+                            Tus puntos
+                          </Text>
+                          <View
+                            style={
+                              [
+                                {
+                                  "alignItems": "center",
+                                  "borderRadius": 20,
+                                  "elevation": 16,
+                                  "height": 150,
+                                  "marginHorizontal": 20,
+                                  "marginTop": 20,
+                                  "padding": 15,
+                                  "shadowColor": "#000",
+                                  "shadowOffset": {
+                                    "height": 8,
+                                    "width": 0,
+                                  },
+                                  "shadowOpacity": 0.44,
+                                  "shadowRadius": 10.32,
+                                },
+                                {
+                                  "backgroundColor": "#334FFA",
+                                },
+                              ]
+                            }
+                            testID="points-card"
+                          >
+                            <Text
+                              style={
+                                {
+                                  "alignSelf": "flex-start",
+                                  "color": "white",
+                                  "fontSize": 16,
+                                  "fontWeight": "800",
+                                  "textTransform": "capitalize",
+                                }
+                              }
+                              testID="month-label"
+                            >
+                              Diciembre
+                            </Text>
+                            <Text
+                              style={
+                                {
+                                  "color": "white",
+                                  "fontSize": 32,
+                                  "fontWeight": "800",
+                                  "position": "absolute",
+                                  "textAlign": "center",
+                                  "top": "50%",
+                                  "width": "100%",
+                                }
+                              }
+                              testID="points-label"
+                            >
+                              1,000.00 pts
+                            </Text>
+                          </View>
                         </View>
                       </View>
                     </View>
